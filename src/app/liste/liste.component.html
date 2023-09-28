@@ -1,0 +1,24 @@
+<div class="container mt-5 text-center">
+  <h2>Mes Films Préférés</h2>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <a (click)="afficherFilm('Titanic', 'assets/affichesFilm/titanic_Affiche.jpg')">Titanic</a>
+    </li>
+    <li class="list-group-item">
+      <a (click)="afficherFilm('Joker', 'assets/affichesFilm/joker_Affiche.jpg')">Joker</a>
+    </li>
+    <li class="list-group-item">
+      <a (click)="afficherFilm('Spiderman', 'assets/affichesFilm/spiderman_Affiche.jpg')">Spiderman</a>
+    </li>
+    <li class="list-group-item">
+      <a (click)="afficherFilm('La Belle et la Bête', 'assets/affichesFilm/BelleEtBete_Affiche.jpg')">La Belle et la Bête</a>
+    </li>
+    <li class="list-group-item">
+      <a (click)="afficherFilm('Avengers', 'assets/affichesFilm/avengers_Affiche.jpg')">Avengers</a>
+    </li>
+  </ul>
+  <div *ngIf="filmSelectionne">
+    <h3>{{ filmSelectionne.titre }}</h3>
+    <img [src]="filmSelectionne.affiche" alt="Affiche du Film">
+  </div>
+</div>
