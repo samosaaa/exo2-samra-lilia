@@ -1,30 +1,35 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { ContactService } from './contact.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ContactService } from '../services/contact.service';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css'],
+  styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
-  formData = {
-    firstName: '',
-    lastName: '',
-    age: null,
-    hideEmail: false,
-    email: '',
-    comment: '',
-  };
+  contactForm: FormGroup;
 
-  constructor(private contactService: ContactService) {} // Injectez le service
+  constructor(
+    private formBuilder: FormBuilder,
+    private contactService: ContactService
+  ) {
+    this.contactForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      age: [null],
+      hideEmail: [false],
+      email: ['', [Validators.required, Validators.email]],
+      comment: ['', Validators.required],
+    });
+  }
 
   onSubmit() {
-    if (this.formData.hideEmail || this.formData.email.includes('@')) {
+    if (this.contactForm.valid) {
+      this.contactService.addContact(this.contactForm.value);
       alert('Le formulaire est valide');
-      this.contactService.addContact(this.formData); // Enregistrez les données du formulaire avec le service
     } else {
-      alert('L\'email n\'est pas valide');
+      alert('Le formulaire n\'est pas valide');
     }
   }
 }

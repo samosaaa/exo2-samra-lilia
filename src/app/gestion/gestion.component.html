@@ -1,1 +1,14 @@
-<p>gestion works!</p>
+<div class="container">
+  <h1>Gestion des Contacts</h1>
+  <div *ngIf="latestContactData">
+    <h2>Dernier formulaire contact envoyé :</h2>
+    <p>Prénom: {{ latestContactData.firstName }}</p>
+    <p>Nom: {{ latestContactData.lastName }}</p>
+    <p>Âge: {{ latestContactData.age }}</p>
+    <p>Email: {{ latestContactData.email }}</p>
+    <p>Commentaire: {{ latestContactData.comment }}</p>
+  </div>
+  <div *ngIf="!latestContactData">
+    <p>Aucun formulaire contact n'a été envoyé.</p>
+  </div>
+</div>

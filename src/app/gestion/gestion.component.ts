@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { ContactService } from '../contact/contact.service'; // Importez le service
+import { ContactService } from '../services/contact.service';
 
 @Component({
   selector: 'app-gestion',
   templateUrl: './gestion.component.html',
-  styleUrls: ['./gestion.component.css'],
+  styleUrls: ['./gestion.component.scss'],
 })
 export class GestionComponent {
   latestContactData: any;
 
   constructor(private contactService: ContactService) {
-    this.latestContactData = this.contactService.getLatestContact(); // Obtenez les données du dernier formulaire
+    this.latestContactData = this.contactService.getLatestContact();
   }
 }
