@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
+import {ContactForm} from "../contact/contact-form.model";
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContactService {
-  private contactData: any[] = [];
+  public contactData : ContactForm | null=null;
 
-  addContact(data: any) {
-    this.contactData.push(data);
+  addContact(data: ContactForm) {
+    this.contactData = (data);
   }
 
-  getLatestContact() {
-    return this.contactData[this.contactData.length - 1];
+  getLatestContact() : ContactForm | null{
+    return this.contactData;
   }
 }
