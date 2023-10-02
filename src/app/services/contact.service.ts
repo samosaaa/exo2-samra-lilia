@@ -7,8 +7,9 @@ import {ContactForm} from "../contact/contact-form.model";
 export class ContactService {
   public contactData : ContactForm | null=null;
 
-  addContact(data: ContactForm) {
-    this.contactData = (data);
+  addContact(data: ContactForm):void {
+    this.contactData = data;
+    console.log("form du service add : ", this.contactData);
   }
 
   getLatestContact() : ContactForm | null{

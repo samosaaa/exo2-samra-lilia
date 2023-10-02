@@ -8,9 +8,11 @@ import {ContactForm} from "../contact/contact-form.model";
   styleUrls: ['./gestion.component.scss'],
 })
 export class GestionComponent {
-  latestContactData: ContactForm | null;
+  latestContactData: ContactForm | null=null;
 
-  constructor(private contactService: ContactService) {
+  constructor(private contactService: ContactService) {}
+
+  ngOnInit() : void {
     this.latestContactData = this.contactService.getLatestContact();
   }
 }

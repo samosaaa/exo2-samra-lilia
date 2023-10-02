@@ -8,8 +8,8 @@ import {GestionComponent} from "./gestion/gestion.component";
 const routes: Routes = [
   {path: '', component: AccueilComponent, pathMatch: "full"},
   {path: 'liste', component: ListeComponent},
-  { path: 'gestion', component: GestionComponent},
   {path: 'contact', component: ContactComponent},
+  { path: 'gestion', component: GestionComponent},
   {path: '**', component: AccueilComponent}
 
 
