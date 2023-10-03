@@ -1,16 +1,18 @@
 <div class="container">
   <div class="mt-5">
-  <h2>Informations du dernier formulaire contact</h2>
-  <div *ngIf="latestContactData; else noData">
-    <p>Prénom: {{ latestContactData.firstName }}</p>
-    <p>Nom: {{ latestContactData.lastName }}</p>
-    <p>Âge: {{ latestContactData.age }}</p>
-    <p>Hide Email: {{ latestContactData.hideEmail ? 'Oui' : 'Non' }}</p>
-    <p *ngIf="!latestContactData.hideEmail">Email: {{ latestContactData.email }}</p>
-    <p>Commentaire: {{ latestContactData.comment }}</p>
-  </div>
-  <ng-template #noData>
-    <p>404 NOT FOUND</p>
-  </ng-template>
+    <div *ngIf="latestContactData; else noData">
+      <h2>Informations du dernier formulaire contact</h2>
+      <p>Prénom: {{ latestContactData.firstName }}</p>
+      <p>Nom: {{ latestContactData.lastName }}</p>
+      <p>Âge: {{ latestContactData.age }}</p>
+      <p>Hide Email: {{ latestContactData.hideEmail ? 'Oui' : 'Non' }}</p>
+      <p *ngIf="!latestContactData.hideEmail">Email: {{ latestContactData.email }}</p>
+      <p>Commentaire: {{ latestContactData.comment }}</p>
+    </div>
+    <ng-template #noData>
+      <div class="d-flex justify-content-center align-items-center" style="max-height: 500px;">
+        <img src="/assets/404NotFound.png" class="img-fluid" style="max-width: 700px;">
+      </div>
+    </ng-template>
   </div>
 </div>

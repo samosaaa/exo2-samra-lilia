@@ -1,38 +1,40 @@
 <div class="container">
   <div class="mt-5">
-  <h2 class="text-center">Contactez-nous</h2>
-  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
-    <div class="form-group">
-      <label for="firstName">Prénom</label>
-      <input type="text" id="firstName" formControlName="firstName" class="form-control" required>
-    </div>
-    <div class="form-group">
-      <label for="lastName">Nom</label>
-      <input type="text" id="lastName" formControlName="lastName" class="form-control" required>
-    </div>
-    <div class="form-group">
-      <label for="age">Âge</label>
-      <input type="number" id="age" formControlName="age" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="hideEmail">Masquer l'Email</label>
-      <input type="checkbox" id="hideEmail" formControlName="hideEmail" class="form-check-input">
-    </div>
-    <div class="form-group" *ngIf="!contactForm.get('hideEmail')?.value">
-      <label for="email">Email</label>
-      <input type="email" id="email" formControlName="email" class="form-control" required>
-      <div *ngIf="contactForm.get('email')?.hasError('required') && contactForm.get('email')?.touched" class="text-danger">
-        L'email est requis.
+    <h2 class="text-center">Contactez-nous</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+      <div class="form-group">
+        <label for="firstName">Prénom</label>
+        <input type="text" id="firstName" formControlName="firstName" class="form-control" required>
       </div>
-      <div *ngIf="contactForm.get('email')?.hasError('email') && contactForm.get('email')?.touched" class="text-danger">
-        L'email doit être au format valide.
+      <div class="form-group">
+        <label for="lastName">Nom</label>
+        <input type="text" id="lastName" formControlName="lastName" class="form-control" required>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="comment">Commentaire</label>
-      <textarea id="comment" formControlName="comment" class="form-control" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Envoyer</button>
-  </form>
+      <div class="form-group">
+        <label for="age">Âge</label>
+        <input type="number" id="age" formControlName="age" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="hideEmail">Masquer l'Email</label>
+        <input type="checkbox" id="hideEmail" formControlName="hideEmail" class="form-check-input">
+      </div>
+      <div class="form-group" *ngIf="!contactForm.get('hideEmail')?.value">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" class="form-control">
+        <div *ngIf="contactForm.get('email')?.hasError('required') && contactForm.get('email')?.touched"
+             class="text-danger">
+          L'email est requis.
+        </div>
+        <div *ngIf="contactForm.get('email')?.hasError('email') && contactForm.get('email')?.touched"
+             class="text-danger">
+          L'email doit être au format valide.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="comment">Commentaire</label>
+        <textarea id="comment" formControlName="comment" class="form-control" required></textarea>
+      </div>
+      <button type="submit" [disabled]="!contactForm.valid" class="btn btn-primary">Envoyer</button>
+    </form>
   </div>
 </div>

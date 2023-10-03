@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-liste',
@@ -10,6 +10,6 @@ export class ListeComponent {
   filmSelectionne: { titre: string, affiche: string } | null = null;
 
   public afficherFilm(titre: string, affiche: string) {
-    this.filmSelectionne = { titre, affiche };
+    this.filmSelectionne = {titre, affiche};
   }
 }

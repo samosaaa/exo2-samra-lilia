@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ContactService } from '../services/contact.service';
+import {Component} from '@angular/core';
+import {ContactService} from '../services/contact.service';
 import {ContactForm} from "../contact/contact-form.model";
 
 @Component({
@@ -8,11 +8,12 @@ import {ContactForm} from "../contact/contact-form.model";
   styleUrls: ['./gestion.component.scss'],
 })
 export class GestionComponent {
-  latestContactData: ContactForm | null=null;
+  latestContactData: ContactForm | null = null;
 
-  constructor(private contactService: ContactService) {}
+  constructor(private contactService: ContactService) {
+  }
 
-  ngOnInit() : void {
+  ngOnInit(): void {
     this.latestContactData = this.contactService.getLatestContact();
   }
 }

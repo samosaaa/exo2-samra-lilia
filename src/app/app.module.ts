@@ -1,19 +1,19 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 
-import { ContactService } from './services/contact.service';
+import {ContactService} from './services/contact.service';
 
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { AccueilComponent } from './accueil/accueil.component';
-import { ListeComponent } from './liste/liste.component';
-import { ContactComponent } from './contact/contact.component';
-import { GestionComponent } from './gestion/gestion.component';
+import {HeaderComponent} from './header/header.component';
+import {FooterComponent} from './footer/footer.component';
+import {AccueilComponent} from './accueil/accueil.component';
+import {ListeComponent} from './liste/liste.component';
+import {ContactComponent} from './contact/contact.component';
+import {GestionComponent} from './gestion/gestion.component';
 
 @NgModule({
   declarations: [
@@ -34,5 +34,6 @@ import { GestionComponent } from './gestion/gestion.component';
   providers: [ContactService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
 

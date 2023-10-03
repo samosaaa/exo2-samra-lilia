@@ -2,22 +2,25 @@
   <h2>Mes Films Préférés</h2>
   <ul class="list-group">
     <li class="list-group-item">
-      <a (click)="afficherFilm('Titanic', 'assets/affichesFilm/titanic_Affiche.jpg')">Titanic</a>
+      <a (click)="afficherFilm('Titanic', 'assets/affichesFilm/titanic_Affiche.jpg')" class="btn btn-link">Titanic</a>
     </li>
     <li class="list-group-item">
-      <a (click)="afficherFilm('Joker', 'assets/affichesFilm/joker_Affiche.jpg')">Joker</a>
+      <a (click)="afficherFilm('Joker', 'assets/affichesFilm/joker_Affiche.jpg')" class="btn btn-link">Joker</a>
     </li>
     <li class="list-group-item">
-      <a (click)="afficherFilm('Spiderman', 'assets/affichesFilm/spiderman_Affiche.jpg')">Spiderman</a>
+      <a (click)="afficherFilm('Spiderman', 'assets/affichesFilm/spiderman_Affiche.jpg')"
+         class="btn btn-link">Spiderman</a>
     </li>
     <li class="list-group-item">
-      <a (click)="afficherFilm('La Belle et la Bête', 'assets/affichesFilm/BelleEtBete_Affiche.jpg')">La Belle et la Bête</a>
+      <a (click)="afficherFilm('La Belle et la Bête', 'assets/affichesFilm/BelleEtBete_Affiche.jpg')"
+         class="btn btn-link">La Belle et la Bête</a>
     </li>
     <li class="list-group-item">
-      <a (click)="afficherFilm('Avengers', 'assets/affichesFilm/avengers_Affiche.jpg')">Avengers</a>
+      <a (click)="afficherFilm('Avengers', 'assets/affichesFilm/avengers_Affiche.jpg')"
+         class="btn btn-link">Avengers</a>
     </li>
   </ul>
-  <div *ngIf="filmSelectionne">
+  <div *ngIf="filmSelectionne" class="mt-4">
     <h3>{{ filmSelectionne.titre }}</h3>
     <img [src]="filmSelectionne.affiche" alt="Affiche du Film">
   </div>

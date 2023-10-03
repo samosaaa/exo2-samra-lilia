@@ -9,9 +9,8 @@ const routes: Routes = [
   {path: '', component: AccueilComponent, pathMatch: "full"},
   {path: 'liste', component: ListeComponent},
   {path: 'contact', component: ContactComponent},
-  { path: 'gestion', component: GestionComponent},
+  {path: 'gestion', component: GestionComponent},
   {path: '**', component: AccueilComponent}
-
 
 ];
 
