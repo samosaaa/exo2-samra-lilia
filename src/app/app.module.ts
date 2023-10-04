@@ -6,7 +6,6 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 
-import {ContactService} from './services/contact.service';
 
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
@@ -31,7 +30,6 @@ import {GestionComponent} from './gestion/gestion.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

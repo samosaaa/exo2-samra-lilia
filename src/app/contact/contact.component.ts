@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ContactService} from '../services/contact.service';
 import {Router} from '@angular/router';
-import {ContactForm} from "./contact-form.model";
 
 
 @Component({
@@ -20,29 +19,15 @@ export class ContactComponent {
       lastName: ['', Validators.required],
       age: [null],
       hideEmail: [false],
-      email: [''],
+      email: ['', [Validators.required, Validators.email]],
       comment: ['', Validators.required]
-    });
-
-
-    this.contactForm.get('hideEmail')?.valueChanges.subscribe((hideEmail) => {
-      const emailControl = this.contactForm.get('email');
-
-      if (hideEmail) {
-        emailControl?.clearValidators();
-      } else {
-        emailControl?.setValidators([Validators.required, Validators.email]);
-      }
-
-      emailControl?.updateValueAndValidity();
     });
   }
 
 
   onSubmit(): void {
     if (this.contactForm.valid) {
-      const test: ContactForm = this.contactForm.value
-      this.contactService.addContact(test);
+      this.contactService.addContact(this.contactForm.value);
       alert('Le formulaire est valide');
       this.router.navigateByUrl('/');
     }
