@@ -8,7 +8,6 @@ import {Router} from '@angular/router';
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
-  providers: [ContactService]
 })
 export class ContactComponent {
   contactForm: FormGroup;
